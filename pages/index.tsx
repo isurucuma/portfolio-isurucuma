@@ -54,7 +54,7 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
 
 export default Home;
 
-export const getStaticProps: GetStaticProps<Props> = async function () {
+export const getServerSideProps: GetServerSideProps<Props> = async function () {
   const pageInfo: PageInfo = await fetchPageInfo();
   const skills: Skill[] = await fetchSkills();
   const projects: Project[] = await fetchProjects();
@@ -68,6 +68,6 @@ export const getStaticProps: GetStaticProps<Props> = async function () {
       socials,
     },
 
-    revalidate: 10,
+    // revalidate: 10,
   };
 };
