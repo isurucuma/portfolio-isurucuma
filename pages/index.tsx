@@ -29,22 +29,22 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
       <Head>
         <title>Isuru_Cumaranathunga portfolio</title>
       </Head>
-      {/* <Header socials={socials} />
+      <Header socials={socials} />
       <section id="hero" className="snap-start">
         <Hero pageInfo={pageInfo} />
       </section>
       <section id="about" className="snap-center">
         <About pageInfo={pageInfo} />
-      </section> */}
+      </section>
       {/* <section id="experience" className="snap-center">
         <Experience />
       </section> */}
-      {/* <section id="skills" className="snap-center">
+      <section id="skills" className="snap-center">
         <Skills skills={skills} />
       </section>
       <section id="projects" className="snap-center">
         <Projects projects={projects} />
-      </section> */}
+      </section>
       <section id="contactme" className="snap-center">
         <ContactMe />
       </section>
@@ -54,20 +54,20 @@ const Home = ({ pageInfo, skills, projects, socials }: Props) => {
 
 export default Home;
 
-// export const getStaticProps: GetStaticProps<Props> = async function () {
-//   // const pageInfo: PageInfo = await fetchPageInfo();
-//   // const skills: Skill[] = await fetchSkills();
-//   // const projects: Project[] = await fetchProjects();
-//   // const socials: Social[] = await fetchSocials();
+export const getStaticProps: GetStaticProps<Props> = async function () {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const skills: Skill[] = await fetchSkills();
+  const projects: Project[] = await fetchProjects();
+  const socials: Social[] = await fetchSocials();
 
-//   return {
-//     props: {
-//       // pageInfo,
-//       // skills,
-//       // projects,
-//       // socials,
-//     },
+  return {
+    props: {
+      pageInfo,
+      skills,
+      projects,
+      socials,
+    },
 
-//     revalidate: 10,
-//   };
-// };
+    revalidate: 10,
+  };
+};
